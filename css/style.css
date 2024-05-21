@@ -23,6 +23,9 @@ body {
 
 
 h3{
+    font-family: "graduate", serif;
+font-weight: 400;
+font-style: normal;
     color: azure;
     text-align: center;
 }
@@ -70,3 +73,11 @@ h3{
 
 
 /* */
+
+h1{
+    font-family: "feneon", sans-serif;
+font-weight: 400;
+font-style: normal;
+text-align: center;
+color: white;
+}
