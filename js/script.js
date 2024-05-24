@@ -26,3 +26,11 @@ function checkAnswers() {
     result.style.display = 'block';
     result.textContent = `You scored ${score} out of 10.`;
 }
+
+{
+    var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+
+}
