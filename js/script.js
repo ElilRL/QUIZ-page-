@@ -1,3 +1,6 @@
+let correct = 0;
+
+
 function checkAnswers() {
     const answers = {
         q1: 'A',
@@ -10,27 +13,30 @@ function checkAnswers() {
         q8: 'B',
         q9: 'A',
         q10: 'C'
-    };
+    } ;
 
-    let score = 0;
-    const form = document.getElementById('quizForm');
-    const formData = new FormData(form);
-
-    for (const [question, correctAnswer] of Object.entries(answers)) {
-        if (formData.get(question) === correctAnswer) {
-            score++;
-        }
+    // loop this
+    if (q1 == "A") {
+        correct++;
+    }   
+    else{
+    var element = document.getElementById("quizForm");
+     element.classList.add("wrong");
     }
+
+    
+    // let score = 0;
+    // const form = document.getElementById('quizForm');
+    // const formData = new FormData(form);
+
+    // for (const [question, correctAnswer] of Object.entries(answers)) {
+    //     if (formData.get(question) === correctAnswer) {
+    //         score++;
+    //     }
+    // }
 
     const result = document.getElementById('result');
     result.style.display = 'block';
-    result.textContent = `You scored ${score} out of 10.`;
+    result.textContent = `You scored ${correct} out of 10.`;
 }
 
-{
-    var x = document.getElementById("myBtn");
-x.addEventListener("mouseover", myFunction);
-x.addEventListener("click", mySecondFunction);
-x.addEventListener("mouseout", myThirdFunction);
-
-}
