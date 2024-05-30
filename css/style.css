@@ -80,8 +80,11 @@ text-align: center;
 color: white;
 }
 
-.wrong{
-    border-color: red;
+.correct {
+    background-color: #108314; 
 }
 
+.wrong {
+    background-color: #d62133; 
+}
 
