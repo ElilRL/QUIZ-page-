@@ -88,3 +88,26 @@ color: white;
     background-color: #d62133; 
 }
 
+h4{
+    
+        font-size: 17px;
+        background: transparent;
+        border: none;
+        padding: 1em 1.5em;
+        text-transform: uppercase;
+        position: relative;
+        transition: 0.5s ease;
+        cursor: pointer;
+        margin-top: 10px; 
+        font-weight: bold;
+        color: #000000; /* Base color of the text */
+        background: linear-gradient(45deg, #fefdff, #ffffff); /* Gradient background */
+        -webkit-background-clip: text; /* Clip text to background */
+        -webkit-text-fill-color: transparent; /* Hide the text itself */
+        text-shadow: 0 0 5px rgba(175, 154, 34, 0.8); /* Text shadow */
+        /* Optional: Add a box shadow to enhance the shiny effect */
+        box-shadow: 0 0 10px rgba(240, 205, 8, 0.8);
+      
+      
+      
+}

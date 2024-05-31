@@ -1,43 +1,33 @@
-function checkAnswers() {
-    let correct = 0; // Declare correct variable within the function
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const answers = ['A', 'A', 'C', 'D', 'B', 'B', 'A', 'B', 'A', 'C'];
 
-    const answers = {
-        q1: 'A',
-        q2: 'A',
-        q3: 'C',
-        q4: 'D',
-        q5: 'B',
-        q6: 'B',
-        q7: 'A',
-        q8: 'B',
-        q9: 'A',
-        q10: 'C'
-    };
+    window.checkAnswers = function() {
+        const form = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+        let score = 0;
 
-    const form = document.getElementById('quizForm');
-    const formData = new FormData(form);
+        answers.forEach((answer, index) => {
+            const questionNumber = index + 1;
+            const selectedOption = form.querySelector(`input[name="q${questionNumber}"]:checked`);
 
-    for (const [question, correctAnswer] of Object.entries(answers)) {
-        const userAnswer = formData.get(question);
-        const questionElement = document.querySelector(`[name="${question}"]:checked`);
-
-        if (questionElement) {
-            const containerElement = questionElement.closest('.question');
-
-            if (containerElement) {
-                if (userAnswer === correctAnswer) {
-                    correct++;
-                    containerElement.classList.remove('wrong');
-                    containerElement.classList.add('correct');
-                } else {
-                    containerElement.classList.remove('correct');
-                    containerElement.classList.add('wrong');
-                }
+            if (selectedOption && selectedOption.value === answer) {
+                score++;
             }
-        }
-    }
+        });
 
-    const result = document.getElementById('result');
-    result.style.display = 'block';
-    result.textContent = `You scored ${correct} out of 10.`;
-}
+        const totalQuestions = answers.length;
+        const scorePercentage = (score / totalQuestions) * 100;
+
+        
+        resultDiv.innerHTML = `<h3>Your Score: ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%)</h3>`;
+
+        if (scorePercentage >= 70) {
+            document.querySelector('.avatar1 img').style.display = 'block';
+            document.querySelector('.avatar img').style.display = 'none';
+        } else {
+            document.querySelector('.avatar img').style.display = 'block';
+            document.querySelector('.avatar1 img').style.display = 'none';
+        }
+    };
+});
